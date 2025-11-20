@@ -10,6 +10,12 @@
       margin: 0;
       padding: 0;
     }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f5f5;
@@ -143,11 +149,7 @@
       display: flex;
       flex-direction: column;
     }
-    .product-card img {
-      width: 100%;
-      object-fit: cover;
-      height: 180px;
-    }
+
     .product-card .info {
       padding: 1rem;
       flex: 1;
@@ -179,6 +181,9 @@
       padding: 2rem;
       text-align: center;
       border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .newsletter input[type="email"] {
       padding: 0.6rem 1rem;
@@ -186,10 +191,17 @@
       max-width: 90%;
       border: none;
       border-radius: 4px;
-      margin-right: 0.5rem;
+    }
+    .newsletter .subscribe {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     .newsletter button {
-      padding: 0.6rem 1re m;
+      padding: 0.6rem 1rem;
       background: #ff7700;
       color: white;
       border: none;
@@ -203,6 +215,7 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      padding: 0.6rem 1rem;
     }
     footer .footer-section {
       flex: 1;
@@ -211,43 +224,6 @@
     }
     footer a {
       color: #ddd;
-    }
-    .faq-page {
-      background: #fff;
-      margin: 2rem 0;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .faq-page .page-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .faq-page h2 {
-      color: #ff7700;
-      font-size: 1.6rem;
-    }
-    .faq-page .back-link {
-      background: #ff7700;
-      color: #fff;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .faq-list details {
-      margin: 0.6rem 0;
-      padding: 0.8rem;
-      background: #fafafa;
-      border-radius: 6px;
-      border-left: 4px solid #ffbf69;
-    }
-    .faq-list summary {
-      cursor: pointer;
-      font-weight: 700;
     }
     .unrefined-note {
       margin-top: 1rem;
@@ -269,6 +245,7 @@
     }
     header input[type="search"] {
       background: rgba(255,255,255,0.95);
+      text-align: center;
     }
     .hero {
       background: linear-gradient(135deg, #073b2a 0%, #2e7d32 60%), url('https://via.placeholder.com/1200x400?text=Green+Tech+Products') center / cover no-repeat;
@@ -307,21 +284,17 @@
       font-weight: 800;
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
-      background: rgba(255,255,255,0.95);
-      color: #2e7d32;
-      box-shadow: 0 1px 0 rgba(0,0,0,0.08);
-      display: inline-block;
-    }
-    /* color variants when author adds explicit classes (optional) */
-    .product-card[data-condition="New"]::after { background:#2e7d32; color:#fff; }
-    .product-card[data-condition="Refurbished"]::after { background:#ffd54f; color:#333; }
-    .product-card[data-condition="Recycled"]::after { background:#a5d6a7; color:#08360f; }
-
-    .product-card img {
-      background: linear-gradient(180deg,#eef7ef,#ffffff);
+        }
+        .product-card::before {
+      content: "";
+      display: block;
       height: 180px;
-      object-fit: cover;
-    }
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+        }
     .product-card .info h4 {
       font-family: "Segoe UI", Tahoma, sans-serif;
       font-size: 1.05rem;
@@ -345,10 +318,6 @@
       background: #2e7d32;
       color: #fff;
     }
-
-    .faq-page h2 {
-      color: #2e7d32;
-    }
     footer {
       background-color: #0e2d20;
       color: #dff6e8;
@@ -362,12 +331,14 @@
       transform: translateZ(0);
       transition: transform 0.08s ease, box-shadow 0.08s ease;
     }
-    .category-card:active,
-    .product-card:active {
-      transform: translateY(2px) scale(0.998);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+    .categories .category-card:hover,
+    .product-card:hover,
+    aside:hover,
+    nav:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);  
+      
     }
-
     .site-purpose-note {
       margin-top: 1rem;
       padding: 0.6rem;
@@ -377,6 +348,58 @@
       border-radius: 6px;
       font-size: 0.9rem;
     }
+    header {
+      background: transparent !important;
+      color: #2e7d32;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      position: relative;
+      gap: 1rem;
+    }
+
+    header .search {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    header input[type="search"] {
+      width: 760px;
+      height: 50px;
+      max-width: 60%;
+      padding: 0.5rem 0.9rem;
+      border-radius: 25px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.95);
+      transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s;
+    }
+
+    header input[type="search"]:hover,
+    header input[type="search"]:focus {
+      box-shadow: 0 6px 18px rgba(46,125,50,0.12);
+      border-color: rgba(46,125,50,0.3);
+      outline: none;
+    }
+
+    header .header-right {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    header button {
+      transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+    }
+    header button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+      opacity: 0.98;
+    }
 
   </style>
 </head>
@@ -384,10 +407,23 @@
 
   <header id="top">
     <div class="logo">Techium</div>
+    <div class="search">
+      <input type="search" placeholder="Search for techq" />
+    </div>
     <div class="header-right">
-      <input type="search" placeholder="Search for crafts, jewelry…" />
       <button>Sell</button>
-      <button>Cart (0)</button>
+      <button>Cart</button>
+      <button>Sign In</button>
+      <style>
+      .header-right button,
+      .header-right button:focus,
+      .header-right button:hover {
+        transition: none !important;
+        transform: none !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+      }
+      </style>
     </div>
   </header>
 
@@ -405,54 +441,38 @@
       <button>Shop Now</button>
     </div>
   </div>
-
-  <section class="categories">
-    <div class="category-card">cpu</div>
-    <div class="category-card">gpu</div>
-    <div class="category-card">motherboard</div>
-    <div class="category-card">ram</div>
-    <div class="category-card">storage</div>
-    <div class="category-card">power supply</div>
-    <div class="category-card">case</div>
-    <div class="category-card">cooling</div>
-    <div class="category-card">monitor</div>
-    <div class="category-card">keyboard</div>
-    <div class="category-card">mouse</div>
-    <div class="category-card">sound</div>
-  </section>
-
   <div class="content-wrapper">
     <aside>
       <h3>Filters</h3>
-      <p><input type="checkbox" id="filter1" /> <label for="filter1">Handmade</label></p>
-      <p><input type="checkbox" id="filter2" /> <label for="filter2">Jewelry</label></p>
-      <p><input type="checkbox" id="filter3" /> <label for="filter3">Home Décor</label></p>
+      <p><input type="checkbox" id="filter1" /> <label for="filter1">0% e-waste</label></p>
+      <p><input type="checkbox" id="filter2" /> <label for="filter2">Refurbished</label></p>
+      <p><input type="checkbox" id="filter3" /> <label for="filter3">Repairable</label></p>
       <p><input type="checkbox" id="filter4" /> <label for="filter4">Price: Low to High</label></p>
     </aside>
 
     <main>
       <section class="product-list">
         <div class="product-card">
-          <img src="https://via.placeholder.com/220x180" alt="Product Image" />
+          <img src="https://www.pexels.com/photo/macbook-pro-near-iphone-and-apple-fruit-18105/" alt="M1 Macbook Air laptop"/>
           <div class="info">
-            <h4>Handmade Necklace</h4>
-            <div class="price">$45.00</div>
+            <h4>M1 Macbook air</h4>
+            <div class="price">$1500.00</div>
             <button>Add to Cart</button>
           </div>
         </div>
         <div class="product-card">
-          <img src="https://via.placeholder.com/220x180" alt="Product Image" />
+          <img src="https://via.placeholder.com/220x180?text=Wireless+Headphones" alt="Wireless Headphones"/>
           <div class="info">
-            <h4>Organic Cotton Tote</h4>
+            <h4>Wireless Headphones</h4>
             <div class="price">$25.00</div>
             <button>Add to Cart</button>
           </div>
         </div>
         <div class="product-card">
-          <img src="https://via.placeholder.com/220x180" alt="Product Image" />
+          <img src="https://via.placeholder.com/220x180" alt="iPhone 19 pro" />
           <div class="info">
-            <h4>Wooden Wall Art</h4>
-            <div class="price">$75.00</div>
+            <h4>iPhone 19 pro</h4>
+            <div class="price">$999.00</div>
             <button>Add to Cart</button>
           </div>
         </div>
@@ -463,53 +483,11 @@
   <section class="newsletter">
     <h3>Stay Updated</h3>
     <p>Get latest deals, handcrafted inspirations & more</p>
-    <input type="email" placeholder="Your email address" />
-    <button>Subscribe</button>
+    <div class="subscribe">
+      <input type="email" placeholder="Your email address" />
+      <button>Subscribe</button>
+    </div>
   </section>
-  <section id="faq-page" class="faq-page" aria-labelledby="faq-heading">
-    <div class="page-header">
-      <h2 id="faq-heading">FAQ's — quick & messy</h2>
-      <a class="back-link" href="#top">Back to Home</a>
-    </div>
-
-    <p>Below are some quick answers. This is intentionally a bit rough — like a page someone slapped together.</p>
-
-    <div class="faq-list">
-      <details>
-        <summary>How do I buy something?</summary>
-        <div>
-          Click the "Add to Cart" button on a product. Then go to the Cart and follow checkout steps. Payment methods: card, maybe other stuff later.
-        </div>
-      </details>
-
-      <details>
-        <summary>How do I sell on HandmadeMarket?</summary>
-        <div>
-          Hit "Sell" in the header. You'll be prompted to create a seller profile. It's basic right now — upload pics, write a description, set price, publish. We may add fees later.
-        </div>
-      </details>
-
-      <details>
-        <summary>Can I return an item?</summary>
-        <div>
-          Depends on the seller. Some accept returns, some don't. Check each listing or contact seller directly. We try to encourage clear return policies.
-        </div>
-      </details>
-
-      <details>
-        <summary>Where are items shipped from?</summary>
-        <div>
-          Sellers are independent and ship from various locations. Check listing for estimated shipping times and locations.
-        </div>
-      </details>
-
-      <details>
-        <summary>Is my payment secure?</summary>
-        <div>
-          Basic protections are in place, but this is a minimal demo. Do not use real payment info in this unrefined build.
-        </div>
-      </details>
-    </div>
   <footer>
     <div class="footer-section">
       <h4>About Us</h4>
