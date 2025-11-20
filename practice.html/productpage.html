@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Techium — Products</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html,body { height: 100%; }
+        a { color: inherit; text-decoration: none; }
+        header{
+            display:flex;
+            align-items:center;
+            gap:1rem;
+            justify-content:space-between;
+            background: transparent;
+            padding: 1rem;
+        }
+        .logo { font-weight: 1000; color: #2e7d32; font-size: 2rem; }
+        .search { flex:1; display:flex; justify-content:center; }
+        header input[type="search"]{
+            width: 70%;
+            max-width: 720px;
+            height:44px;
+            padding:0 1rem;
+            border-radius: 24px;
+            border:1px solid rgba(0,0,0,0.08);
+            background: #fff;
+        }
+        .header-right { display:flex; gap:0.6rem; align-items:center; }
+        .header-right button{
+            color: #2e7d32;
+            border:none;
+            padding:0.45rem 0.8rem;
+            border-radius:6px;
+            font-weight:700;
+            cursor:pointer;
+        }
+        nav{
+            background: #fff;
+            padding:0.6rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            margin-bottom: 1rem;
+        }
+        nav ul{ display:flex; gap:1.2rem; list-style:none; }
+
+        .hero{
+            background: linear-gradient(135deg,#073b2a 0%, #2e7d32 60%), url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1600&q=60&auto=format&fit=crop') center/cover no-repeat;
+            color: #eafff1;
+            padding: 2rem;
+            border-radius: 8px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:1rem;
+            margin-bottom: 1rem;
+        }
+        .hero h1{ font-size:1.6rem; letter-spacing:-0.5px; }
+        .hero .cta{ background:#9edc9e; 
+            color:#063b1f; 
+            padding:0.6rem 1rem;
+            border-radius:6px; 
+            font-weight:800;
+            border:none; 
+            cursor:pointer; }
+        .content{
+            display:flex;
+            gap:1.5rem;
+            align-items:flex-start;
+        }
+        aside{
+            width:250px;
+            background:#fff;
+            padding:1rem;
+            border-radius:8px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+        }
+        main{ flex:1; }
+        .product-list{
+            display:grid;
+            grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+            gap:1rem;
+        }
+        .product-card{
+            background:#fff;
+            border-radius:8px;
+            overflow:hidden;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+            display:flex;
+            flex-direction:column;
+        }
+        .product-card img{
+            width:100%;
+            height:150px;
+            object-fit:cover;
+            display:block;
+        }
+        .info{
+            padding:0.9rem;
+            display:flex;
+            flex-direction:column;
+            gap:0.5rem;
+            flex:1;
+        }
+        .info h3{ font-size:1rem; color:#0b3a24; }
+        .price{ color:#2e7d32; font-weight:800; margin-top:auto; }
+        .info button{
+            margin-top:0.6rem;
+            background:#2e7d32;
+            color:#fff;
+            border:none;
+            padding:0.45rem;
+            border-radius:6px;
+            font-weight:700;
+            cursor:pointer;
+        }
+
+        .newsletter{
+            background: linear-gradient(90deg,#f0fff3,#e9fff0);
+            border-radius:8px;
+            padding:1.25rem;
+            display:flex;
+            gap:0.75rem;
+            align-items:center;
+            justify-content:space-between;
+            margin:1.25rem 0;
+        }
+        .newsletter input[type="email"]{
+            padding:0.5rem 0.8rem;
+            border-radius:6px;
+            border:1px solid rgba(0,0,0,0.06);
+            width:60%;
+            max-width:360px;
+        }
+        .product-card:hover, .category:hover, aside:hover, nav:hover{ transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,0,0.08); transition:all .12s ease; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Techium</div>
+
+        <div class="search">
+            <input type="search" placeholder="Search for tech..." aria-label="Search products" />
+        </div>
+
+        <div class="header-right">
+            <button>Sell</button>
+            <button>Cart</button>
+            <button>Sign in</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+           <section class="product-list" aria-label="Product list">
+                 <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=60&auto=format&fit=crop" alt="Laptop on a desk">
+                    <div class="info">
+                        <h3>M1 MacBook Air — Refurbished</h3>
+                        <div class="price">$1,499.00</div>
+                        <button>Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1518444026410-8a59f0e6d8f6?w=800&q=60&auto=format&fit=crop" alt="Wireless headphones">
+                    <div class="info">
+                        <h3>Wireless Headphones — Like new</h3>
+                        <div class="price">$79.00</div>
+                        <button>Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?w=800&q=60&auto=format&fit=crop" alt="Smartwatch on wrist">
+                    <div class="info">
+                        <h3>Smartwatch Series 5 — Certified</h3>
+                        <div class="price">$199.00</div>
+                        <button>Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=60&auto=format&fit=crop" alt="Gaming console">
+                    <div class="info">
+                        <h3>NextGen Console — Repaired</h3>
+                        <div class="price">$399.00</div>
+                        <button>Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=60&auto=format&fit=crop" alt="Smartphone">
+                    <div class="info">
+                        <h3>Smartphone Pro — Repaired</h3>
+                        <div class="price">$599.00</div>
+                        <button>Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1510557880182-3d4d3e2f6b58?w=800&q=60&auto=format&fit=crop" alt="Portable speaker">
+                    <div class="info">
+                        <h3>Portable Speaker — Certified</h3>
+                        <div class="price">$45.00</div>
+                        <button>Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=60&auto=format&fit=crop" alt="Smartphone">
+                    <div class="info">
+                        <h3>Smartphone Pro — Repaired</h3>
+                        <div class="price">$599.00</div>
+                        <button>Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1510557880182-3d4d3e2f6b58?w=800&q=60&auto=format&fit=crop" alt="Portable speaker">
+                    <div class="info">
+                        <h3>Portable Speaker — Certified</h3>
+                        <div class="price">$45.00</div>
+                        <button>Add to cart</button>
+                    </div>
+                </article>
+</section>
+
+            </section>
+        </main>
+    </div>
+</body>
+</html></article></div></article>
