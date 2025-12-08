@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techium – FAQ / About Us</title>
+  <link rel="stylesheet" href="faq.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-flex">
+      <h1 class="logo"><a href="home.html">Techium</a></h1>
+
+      <div class="search-bar">
+        <form id="siteSearchForm">
+          <input type="search" id="searchInput" name="q" placeholder="Search products…" required>
+          <button type="submit" id="searchBtn">🔍</button>
+        </form>
+      </div>
+
+      <nav class="site-nav">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a class="active" href="faq.html">FAQ / About Us</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="faq-main container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">What products do you sell?</button>
+      <div class="faq-answer">
+        <p>We sell new and refurbished tech products, including smartphones, laptops, headphones, smart home devices, and more.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Do you offer warranty on refurbished products?</button>
+      <div class="faq-answer">
+        <p>Yes, all refurbished products come with a 6-month warranty for peace of mind.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">What payment methods do you accept?</button>
+      <div class="faq-answer">
+        <p>We accept major credit/debit cards, UPI, and net banking. Cash on delivery is available for select locations.</p>
+      </div>
+    </div>
+
+    <h2>About Us</h2>
+    <div class="about-us">
+      <p>Techium is your trusted destination for high-quality tech products, both new and refurbished. Our mission is to make technology accessible to everyone, offering the latest gadgets at competitive prices with excellent service.</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Techium. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="faq.js"></script>
+  <script>
+    document.getElementById('siteSearchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const query = document.getElementById('searchInput').value.trim();
+      if (query) {
+        window.location = 'products.html?search=' + encodeURIComponent(query);
+      } else {
+        alert('Please enter a search term.');
+      }
+    });
+  </script>
+
+</body>
+</html>

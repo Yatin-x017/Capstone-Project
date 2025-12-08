@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techium – Cart</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-flex">
+      <h1 class="logo"><a href="home.html">Techium</a></h1>
+
+      <div class="search-bar">
+        <form id="siteSearchForm">
+          <input type="search" id="searchInput" name="q" placeholder="Search products…" required>
+          <button type="submit" id="searchBtn">🔍</button>
+        </form>
+      </div>
+
+      <nav class="site-nav">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="faq.html">FAQ / About Us</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a class="active" href="cart.html">Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="cart-main container">
+    <h2>Your Shopping Cart</h2>
+    <div id="cartItems">
+      <p>Your cart is empty.</p>
+    </div>
+    <div id="cartTotal" class="cart-total"></div>
+    <button id="clearCartBtn" class="btn">Clear Cart</button>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Techium. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+</body>
+</html>

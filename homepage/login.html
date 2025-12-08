@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techium – Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wide-container header-flex">
+
+    <h1 class="logo"><a href="home.html">Techium</a></h1>
+
+    <div class="search-bar">
+      <form id="siteSearchForm">
+        <input type="search" id="searchInput" placeholder="Search products…" required>
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="faq.html">FAQ / About Us</a></li>
+        <li><a class="active" href="login.html">Login</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main class="login-main">
+  <h2>Login to your account</h2>
+
+  <form id="loginForm" class="login-box">
+    <label>Email address</label>
+    <input type="email" id="email" placeholder="you@example.com" required>
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Enter your password" required>
+
+    <button type="submit" class="btn">Login</button>
+
+    <p class="signup-note">
+      Don’t have an account? <a href="signup.html">Sign up</a>
+    </p>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2025 Techium. All rights reserved.</p>
+</footer>
+<script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techium – Products</title>
+  <link rel="stylesheet" href="products.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-flex">
+      <h1 class="logo"><a href="home.html">Techium</a></h1>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search products…" id="searchInput">
+        <button id="searchBtn">🔍</button>
+      </div>
+
+      <nav class="site-nav">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a class="active" href="products.html">Products</a></li>
+          <li><a href="faq.html">FAQ / About Us</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="products-main container">
+    <h2>Our Products</h2>
+
+    <div class="product-list">
+      
+      <div class="product-item">
+        <img src="../images/gamingphone.jpg" alt="Smartphone XL Pro">
+        <div class="product-info">
+          <h3>Smartphone XL Pro</h3>
+          <p>Latest generation smartphone with high-performance camera & display.</p>
+          <p class="price">₹ 49,999</p>
+          <button class="btn add-cart" data-product="Smartphone XL Pro">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <img src="../images/laptop-gaming.jpg" alt="Laptop">
+        <div class="product-info">
+          <h3>Refurbished Laptop Ultra</h3>
+          <p>High-quality refurbished laptop — great value, excellent specs.</p>
+          <p class="price">₹ 69,999</p>
+          <button class="btn add-cart" data-product="Refurbished Laptop Ultra">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Techium. All rights reserved.</p>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+</body>
+</html>
